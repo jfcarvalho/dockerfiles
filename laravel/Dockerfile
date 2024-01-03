@@ -1,8 +1,10 @@
 FROM php:7.4-cli
+
 WORKDIR /var/www
+
 RUN apt-get update && \ 
     apt-get install libzip-dev -y && \
-    docker-php-ext-ext-install zip
+    docker-php-ext-install zip
 
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
